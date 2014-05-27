@@ -134,7 +134,7 @@ module.exports = function(grunt) {
         files: (function() {
           var files = {};
           packages.forEach(function(pkg) {
-            files['tmp/' + pkg.name + '.js'] = ['packages/' + pkg.name + '/wrap/browser.start', 'vendor/loader.js', 'tmp/libs/' + pkg.name + '.js', 'tmp/libs/' + pkg.name + '/**/*.js', 'packages/' + pkg.name + '/wrap/browser.end'];
+            files['tmp/' + pkg.name + '.js'] = ['packages/' + pkg.name + '/wrap/browser.start', 'tmp/libs/' + pkg.name + '.js', 'tmp/libs/' + pkg.name + '/**/*.js', 'packages/' + pkg.name + '/wrap/browser.end'];
           });
           return files;
         })()
@@ -189,7 +189,7 @@ module.exports = function(grunt) {
       amd: {
         files: packages.map(function(pkg) {
           return {
-            src: ['tmp/' + pkg.name + '.amd.min.js'],
+            src: ['tmp/' + pkg.name + '.amd.js'],
             dest: 'dist/' + pkg.name + '-' + pkg.version + '.amd.js'
           };
         })
